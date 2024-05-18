@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Show Content Of Second File') {
             steps {
-                echo 'Added New line to test1 ' >> test1
+                sh 'echo 'Added New line to test1 ' >> test1'
                 echo 'Content of changed second file'
                 sh 'cat test1'
             }
