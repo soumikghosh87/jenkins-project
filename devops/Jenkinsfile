@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('File Copy') {
+            steps {
+                echo 'Copy from one file to another file'
+                cp test test1
+            }
+        }
+        stage('Show Content Of First File') {
+            steps {
+                echo 'Content of first file'
+                cat test
+            }
+        }
+        stage('Show Content Of Second File') {
+            steps {
+                echo 'Added New line to test1 ' >> test1
+                echo 'Content of changed second file'
+                cat test1
+            }
+        }
+    }
+}
