@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('File Copy') {
             steps {
+                sh "env"
                 echo 'Copy from one file to another file'
                 sh 'cp test test1'
             }
@@ -16,7 +17,7 @@ pipeline {
         }
         stage('Show Content Of Second File') {
             steps {
-                sh "echo 'Added New line to test1'  >> test1"
+                sh "echo 'Added New line to test1 ${env.Branch}'  >> test1"
                 echo 'Content of changed second file'
                 sh 'cat test1'
             }
