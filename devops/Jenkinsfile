@@ -20,6 +20,7 @@ pipeline {
                 sh "echo 'Added New line to test1 ${env.Branch}'  >> test1"
                 echo 'Content of changed second file'
                 sh 'cat test1'
+                sh 'cat test'
             }
         }
     }
